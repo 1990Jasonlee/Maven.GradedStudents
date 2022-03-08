@@ -72,8 +72,9 @@ public class Student {
         return average / this.examScores.size();
     }
     public String toString(){
-        String student = firstName + " " + lastName + "/n" + "Average Score: " + getAverageExamScore() + "/n" + "";
-
+        String student = firstName + " " + lastName + "\n" +
+                "Average Score: " + getAverageExamScore() + "\n" +
+                "Exam scores: " + getExamScores();
+        return student;
     }
-    //Student should override the toString method by returning a clean String representation of the person.
 }
