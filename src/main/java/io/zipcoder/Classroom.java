@@ -1,8 +1,6 @@
 package io.zipcoder;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
+import java.util.*;
 
 public class Classroom {
 
@@ -71,9 +69,12 @@ public class Classroom {
         return students;
     }
 
-    public void getGradeBook(){
-        Student[] average = getStudentsByScore();
-        for (int i = 0; i < students.length; i++){
+    public Map <Student, String> getGradeBook(){
+
+        Map<Student,String> gradeBook = new HashMap<>();
+
+//        Student[] average = getStudentsByScore();
+//        for (int i = 0; i < students.length; i++){
 
         }
 
