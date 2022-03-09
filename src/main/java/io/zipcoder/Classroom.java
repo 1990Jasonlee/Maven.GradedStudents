@@ -2,6 +2,7 @@ package io.zipcoder;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 public class Classroom {
 
@@ -66,8 +67,15 @@ public class Classroom {
 
     public Student[] getStudentsByScore(){
 
-        Arrays.sort(students);
+        Arrays.sort(students, Collections.reverseOrder());
         return students;
     }
 
+    public void getGradeBook(){
+        Student[] average = getStudentsByScore();
+        for (int i = 0; i < students.length; i++){
+
+        }
+
+    }
 }
