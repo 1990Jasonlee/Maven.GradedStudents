@@ -72,11 +72,19 @@ public class Classroom {
     public Map <Student, String> getGradeBook(){
 
         Map<Student,String> gradeBook = new HashMap<>();
-
-//        Student[] average = getStudentsByScore();
-//        for (int i = 0; i < students.length; i++){
-
+        String letter = "";
+        for (Student student : students){
+            if (student.getAverageExamScore() >=90){
+                letter = "A";
+            }else if ( student.getAverageExamScore() >=80){
+                letter = "B";
+            }else if ( student.getAverageExamScore() >=70){
+                letter = "C";
+            }else if ( student.getAverageExamScore() >= 60){
+                letter = "D";
+            }else letter = "F";
+            gradeBook.put(student,letter);
         }
-
+        return gradeBook;
     }
 }
