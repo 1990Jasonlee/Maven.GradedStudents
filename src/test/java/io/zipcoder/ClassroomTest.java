@@ -3,6 +3,8 @@ package io.zipcoder;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.Map;
+
 public class ClassroomTest {
     @Test
     public void maxStudentTest(){
@@ -58,5 +60,16 @@ public class ClassroomTest {
         Assert.assertEquals(expected, actual);
     }
 
-
+    @Test
+    public void getGradeBook(){
+        //Given
+        Classroom classroom = new Classroom();
+        Double[] score = new Double[]{10.0, 7.0, 95.0};
+        Student student = new Student("Abc","Def", score);
+        classroom.addStudent(student);
+        //When
+        Map<Student,String> actual = classroom.getGradeBook();
+        //Then
+        Assert.assertEquals(actual.get(student),"F");
+    }
 }

@@ -68,6 +68,7 @@ public class Classroom {
 //        Arrays.sort(students, Collections.reverseOrder());
 //        return students;
         List<Student> newList = Arrays.asList(students);
+        newList.removeAll(Collections.singleton(null));
         Comparator<Student> comparator = Comparator.comparingDouble((Student i) -> -i.getAverageExamScore())
                 .thenComparing(s -> s.getLastName())
                 .thenComparing(s -> s.getFirstName());
@@ -80,13 +81,13 @@ public class Classroom {
         Map<Student,String> gradeBook = new HashMap<>();
         String letter = "";
         for (Student student : students){
-            if (student.getAverageExamScore() >=90){
+            if (student.getAverageExamScore() >=90.0){
                 letter = "A";
-            }else if ( student.getAverageExamScore() >=80){
+            }else if ( student.getAverageExamScore() >=80.0){
                 letter = "B";
-            }else if ( student.getAverageExamScore() >=70){
+            }else if ( student.getAverageExamScore() >=70.0){
                 letter = "C";
-            }else if ( student.getAverageExamScore() >= 60){
+            }else if ( student.getAverageExamScore() >= 60.0){
                 letter = "D";
             }else letter = "F";
             gradeBook.put(student,letter);
