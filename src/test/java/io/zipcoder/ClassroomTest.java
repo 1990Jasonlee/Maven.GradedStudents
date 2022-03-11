@@ -4,9 +4,19 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class ClassroomTest {
+    @Test
+    public void maxStudentTest(){
+        //Given
+        Student[] expected = new Student[10];
+        //When
+        Classroom classroom = new Classroom(10);
+        Student[] actual = classroom.getStudents();
+        //Then
+        Assert.assertEquals(expected,actual);
+    }
 
     @Test
-    public void testClassroom(){
+    public void classroomTest(){
         //Given
         Student[] expected = new Student[30];
         //When
@@ -15,4 +25,5 @@ public class ClassroomTest {
         //Then
         Assert.assertEquals(expected, actual);
     }
+
 }
