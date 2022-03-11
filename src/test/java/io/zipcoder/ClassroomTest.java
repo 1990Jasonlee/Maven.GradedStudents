@@ -43,18 +43,20 @@ public class ClassroomTest {
     @Test
     public void getStudentsByScoreTest(){
         //Given
-        Double[] score = new Double[]{100.0, 100.0, 95.0};
-        Double[] score1 = new Double[]{0.0, 100.0, 95.0};
-        Double[] score2 = new Double[]{80.0, 100.0, 95.0};
-        Double[] score3 = new Double[]{100.0, 100.0, 100.0};
+        Double[] score = new Double[]{10.0, 7.0, 95.0};
+        Double[] score1 = new Double[]{100.0, 100.0, 95.0};
+        Double[] score2 = new Double[]{100.0, 50.0, 75.0};
         Student student = new Student("Abc","Def", score);
-        Student student1 = new Student("Ghi","Jkl", score);
-        Student student2 = new Student("Mno","Pqr", score);
-        Student student3 = new Student("stu","Vwx", score);
-        Student[] expected = {student3,student,student2,student1};
+        Student student1 = new Student("Ghi","Jkl", score1);
+        Student student2 = new Student("Mno","Pqr", score2);
+
+        Student[] expected = {student1, student2, student};
+        Classroom classroom = new Classroom(expected);
         //When
-        Student[] actual = student.getStudentsbyScore();
+        Student[] actual = classroom.getStudentsByScore();
         //Then
         Assert.assertEquals(expected, actual);
     }
+
+
 }

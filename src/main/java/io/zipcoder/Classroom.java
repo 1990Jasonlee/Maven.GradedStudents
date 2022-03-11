@@ -65,8 +65,14 @@ public class Classroom {
 
     public Student[] getStudentsByScore(){
 
-        Arrays.sort(students, Collections.reverseOrder());
-        return students;
+//        Arrays.sort(students, Collections.reverseOrder());
+//        return students;
+        List<Student> newList = Arrays.asList(students);
+        Comparator<Student> comparator = Comparator.comparingDouble((Student i) -> -i.getAverageExamScore())
+                .thenComparing(s -> s.getLastName())
+                .thenComparing(s -> s.getFirstName());
+        Collections.sort(newList, comparator);
+        return newList.toArray( new Student[newList.size()]);
     }
 
     public Map <Student, String> getGradeBook(){
